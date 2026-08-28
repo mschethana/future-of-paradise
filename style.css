@@ -1,0 +1,737 @@
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #0B1B2B;
+  color: #EAEAEA;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #071923;
+
+    color: white;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+
+    inset: -5%;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    animation: oceanDrift 18s ease-in-out infinite alternate;
+
+    transform-origin: center center;
+
+    will-change: transform;
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 17, 25, 0.78) 0%,
+            rgba(3, 17, 25, 0.48) 35%,
+            rgba(3, 17, 25, 0.08) 70%,
+            rgba(3, 17, 25, 0.18) 100%
+        );
+
+}
+
+.hero-overlay::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(3, 17, 25, 0.55) 0%,
+            transparent 35%
+        );
+
+}
+
+@keyframes oceanDrift {
+
+    0% {
+        transform:
+            scale(1.02)
+            translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform:
+            scale(1.06)
+            translate3d(-0.5%, -0.3%, 0);
+    }
+
+    100% {
+        transform:
+            scale(1.10)
+            translate3d(-1%, -0.6%, 0);
+    }
+
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding-left: 8vw;
+
+    padding-right: 8vw;
+
+    max-width: 850px;
+
+    animation: heroTextIn 2s ease-out forwards;
+
+}
+
+@keyframes heroTextIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.hero-kicker {
+
+    font-family: Georgia, serif;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.22em;
+
+    margin-bottom: 20px;
+
+    opacity: 0.85;
+
+}
+
+.hero h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    margin: 0;
+
+    letter-spacing: -0.03em;
+
+}
+
+.hero-subtitle {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+
+    margin-top: 30px;
+
+    max-width: 500px;
+
+    line-height: 1.5;
+
+    opacity: 0.9;
+
+}
+
+.photo-credit {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 20px;
+
+    z-index: 3;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.72rem;
+
+    color: rgba(255,255,255,0.85);
+
+    background: rgba(0,0,0,0.35);
+
+    padding: 7px 11px;
+
+    border-radius: 4px;
+
+    backdrop-filter: blur(4px);
+
+}
+
+.photo-credit a {
+
+    color: white;
+
+    text-decoration: underline;
+
+    text-underline-offset: 2px;
+
+}
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    opacity: 0.8;
+
+}
+
+.scroll-arrow {
+
+    font-size: 1.4rem;
+
+    animation: scrollBounce 2s ease-in-out infinite;
+
+}
+
+@keyframes scrollBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+
+}
+
+/* =========================================================
+   SUBTLE OCEAN LIGHT MOVEMENT
+   ========================================================= */
+
+.wave-light {
+
+    position: absolute;
+
+    left: -20%;
+
+    bottom: 0;
+
+    width: 140%;
+
+    height: 45%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0.10;
+
+    background:
+        radial-gradient(
+            ellipse at 30% 50%,
+            rgba(255,255,255,0.35),
+            transparent 55%
+        );
+
+    filter: blur(12px);
+
+    animation: oceanLight 12s ease-in-out infinite alternate;
+
+}
+
+@keyframes oceanLight {
+
+    0% {
+        transform:
+            translateX(-4%)
+            translateY(2%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(2%)
+            translateY(-1%)
+            scale(1.03);
+    }
+
+    100% {
+        transform:
+            translateX(6%)
+            translateY(1%)
+            scale(1.05);
+    }
+
+}
+
+.story-section {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 4rem 2rem;
+  opacity: 0.3;
+  transition: opacity 0.6s ease;
+}
+
+.story-section.is-active {
+  opacity: 1;
+}
+
+.text-panel {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+}
+
+.chart-panel {
+  flex: 2;
+  min-width: 320px;
+}
+
+@media (max-width: 700px) {
+  .story-section {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================
+   SECTION 2 — FIVE ISLANDS
+========================================== */
+
+.islands-section {
+    min-height: 100vh;
+    padding: 120px 7vw 100px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071c2d 0%,
+            #08263b 50%,
+            #061725 100%
+        );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* INTRO */
+
+.islands-intro {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-kicker {
+    font-family: Georgia, serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.islands-intro h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.05;
+    margin: 0 0 25px;
+    font-weight: 400;
+}
+
+.section-intro {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: 0.75;
+}
+
+.island-grid {
+    width: min(1100px, 90vw);
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 24px;
+
+    justify-items: center;
+}
+.island-card:nth-child(1) {
+    grid-column: 1 / span 2;
+}
+
+.island-card:nth-child(2) {
+    grid-column: 3 / span 2;
+}
+
+.island-card:nth-child(3) {
+    grid-column: 5 / span 2;
+}
+
+.island-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.island-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+/* ==========================================
+   ISLAND CARDS
+========================================== */
+
+/* TEMPORARY DEBUG */
+
+.island-card {
+    width: 220px !important;
+    height: 220px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    background-image: var(--island-image);
+    background-size: cover;
+    background-position: center;
+    position: relative !important;
+    z-index: 100 !important;
+    overflow: hidden;
+    background-color: #164b68  !important;
+    border: 2px solid white !important
+}
+
+.island-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+
+    position: absolute !important;
+    z-index: 10000 !important;
+
+    color: white !important;
+}
+
+.island-overlay {
+    display: none !important;
+}
+
+
+.island-number {
+    font-family: Georgia, serif;
+    font-size: 0.75rem;
+
+    letter-spacing: 0.2em;
+
+    margin: 0 0 8px;
+
+    opacity: 0.75;
+}
+
+.island-content h3 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+
+    letter-spacing: 0.08em;
+
+    margin: 0;
+
+    font-weight: 400;
+}
+/* ==========================================
+   WATER RIPPLE
+========================================== */
+
+/* ==========================================
+   CONTINUOUS ISLAND RIPPLE
+========================================== */
+
+.island-card .ripple {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    animation-name: paradiseRipple;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+@keyframes waterRipple {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+
+        opacity: 0.7;
+    }
+
+    60% {
+        opacity: 0.25;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(14);
+
+        opacity: 0;
+    }
+}
+.ripple-two {
+    animation-delay: 2s;
+}
+.island-card:hover {
+    box-shadow:
+        0 0 15px rgba(242, 210, 130, 0.35),
+        0 0 35px rgba(242, 210, 130, 0.20);
+
+    transition:
+        box-shadow 0.4s ease;
+}
+@keyframes paradiseRipple {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.2);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.35;
+    }
+
+    60% {
+        opacity: 0.45;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(6);
+
+        opacity: 0;
+    }
+}
+/* ==========================================
+   SECTION CONCLUSION
+========================================== */
+
+.islands-conclusion {
+    text-align: center;
+
+    margin: 65px auto 0;
+
+    max-width: 750px;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    transition-delay: 1.2s;
+}
+
+.islands-conclusion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.islands-conclusion p {
+    font-family: Georgia, serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+    margin: 0 0 10px;
+}
+
+.islands-conclusion span {
+    font-size: 0.95rem;
+
+    opacity: 0.65;
+
+    line-height: 1.6;
+}
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .islands-section {
+        padding:
+            90px 20px
+            80px;
+    }
+
+
+    .islands-intro {
+        margin-bottom: 45px;
+    }
+
+
+    .island-grid {
+
+        width: 100%;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .island-card {
+
+        width: 100%;
+
+        aspect-ratio: 1 / 1;
+    }
+
+
+    .island-card:nth-child(1),
+    .island-card:nth-child(2),
+    .island-card:nth-child(3),
+    .island-card:nth-child(4),
+    .island-card:nth-child(5) {
+
+        grid-column: auto;
+    }
+
+
+    .island-card:nth-child(5) {
+
+        grid-column:
+            1 / span 2;
+
+        width: 50%;
+    }
+
+
+    .island-content {
+
+        left: 16px;
+        bottom: 16px;
+    }
+
+
+    .island-content h3 {
+
+        font-size: 1.2rem;
+
+    }
+
+}
+.closing {
+  padding: 4rem 3rem;
+  text-align: center
+}
+
+.closing h2 {
+  text-align: center;
+}
+
+.closing p {
+  text-align: center;
+}

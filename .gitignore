@@ -1,0 +1,15 @@
+# Large/raw data - especially the 1.5GB coastline file, never commit this
+data/raw/*.gpkg
+data/raw/*.csv
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/

@@ -730,8 +730,26 @@ body {
 
 .closing h2 {
   text-align: center;
+  color: #65C7C2;
+  border-bottom: 2px solid #F2A65A;
+  padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
 .closing p {
   text-align: center;
+}
+.interaction-hint {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: #B8C4CE;
+  font-size: 0.9rem;
+  font-style: italic;
+  background: #0B1B2B;
+}
+h2 {
+  color: #E8D6A8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
 }

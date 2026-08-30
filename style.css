@@ -518,9 +518,7 @@ body {
 
     font-weight: 400;
 }
-/* ==========================================
-   WATER RIPPLE
-========================================== */
+
 
 /* ==========================================
    CONTINUOUS ISLAND RIPPLE
@@ -553,6 +551,7 @@ body {
     animation-iteration-count: infinite;
     animation-fill-mode: both;
 }
+
 @keyframes waterRipple {
 
     0% {
@@ -575,9 +574,11 @@ body {
         opacity: 0;
     }
 }
+
 .ripple-two {
     animation-delay: 2s;
 }
+
 .island-card:hover {
     box-shadow:
         0 0 15px rgba(242, 210, 130, 0.35),
@@ -723,6 +724,7 @@ body {
     }
 
 }
+
 .closing {
   padding: 4rem 3rem;
   text-align: center
@@ -739,6 +741,7 @@ body {
 .closing p {
   text-align: center;
 }
+
 .interaction-hint {
   text-align: center;
   padding: 1.5rem 1rem;
@@ -747,9 +750,65 @@ body {
   font-style: italic;
   background: #0B1B2B;
 }
+
 h2 {
   color: #E8D6A8;
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
+}
+
+/* ==========================================
+   COASTLINE EROSION RANK CARDS
+========================================== */
+
+.erosion-rank-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.erosion-card {
+    background: #1a1a1a;
+    border: 1px solid #283442;
+    border-radius: 8px;
+    padding: 14px 16px;
+    flex: 1 1 0;
+    min-width: 120px;
+    text-align: center;
+    font-family: Georgia, serif;
+    box-sizing: border-box;
+}
+
+.erosion-card-rank {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.erosion-card-bar {
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.erosion-card-country {
+    font-size: 14px;
+    color: #e8e8e8;
+    margin-bottom: 4px;
+}
+
+.erosion-card-pct {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.erosion-card-label {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
 }
